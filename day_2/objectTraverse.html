@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <title>Object Traverse</title>
+        <script>
+            window.onload = function(){
+                var object = {
+                    name: "Sashi",
+                    age: 26,
+                    occupation: "Web Developer",
+                    qualification: 'B Tech',
+                    personalInfo:{
+                        hobbies:['cooking','playing','coding']
+                    }
+                }
+                console.log('name',object.name, 'age' , object.age);
+                console.log('age',object.age);
+                console.log(object.personalInfo.hobbies);
+
+                // for(var i=0;i< object.personalInfo.hobbies.length;i++){
+                //     console.log('i',i);
+                //     console.log(`object.personalInfo.hobbies ${i}`,object.personalInfo.hobbies[i]);
+                //     // console.log(object.personalInfo.hobbies[i]);
+                // }
+
+
+                // for(var i in object.personalInfo.hobbies){       //in always take index number of array
+                //     console.log(`object.personalInfo.hobbies ${i}`,object.personalInfo.hobbies[i]);
+                // }
+
+                // for(var i of object.personalInfo.hobbies){   //of always take value of array
+                //     console.log(`object.personalInfo.hobbies ${i}`,i);
+                // }
+
+                for(var i in object){       //we can use only in object value,of not work
+                    console.log(object[i]);
+                }
+
+                console.log(`My name is ${object.name}`)
+
+            }
+        </script>
+        <style>
+            main{
+                text-align: center;
+            }
+            span{
+                color: brown;
+                font-size: 22px;
+            }
+        </style>
+    </head>
+    <body>
+        <main>
+            <h1>Object Traverse</h1>
+            <h3>press <span>'F12'</span> to open Developer tool.</h3>
+        </main>
+    </body>
+</html>

@@ -1,0 +1,36 @@
+<html>
+
+<head>
+    <title>Insert and Add</title>
+    <script>
+        window.onload = function () {
+            var btntEl = document.getElementById('btn');
+            var inputEl = document.getElementsByClassName('insert_item')[0];
+            var listEl = document.getElementsByClassName('ul_list')[0];
+            btntEl.addEventListener('click', function (event) {
+                console.log('event', event);
+                console.log(inputEl.value);
+                if (inputEl.value.length > 5) {
+                    var liEl = document.createElement('li');
+                    liEl.innerHTML = inputEl.value;
+                    listEl.appendChild(liEl);
+                }else{
+                    alert('input length is not sufficient :'+inputEl.value);
+                }
+            })
+        };  
+    </script>
+</head>
+
+<body>
+    <main>
+        <h1>List Items</h1>
+        <ul class='ul_list'>
+
+        </ul>
+        <input class='insert_item' type="text">
+        <button id='btn'>Add to List</button>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ajax Call</title>
+</head>
+<body ng-app="myApp" ng-controller="myCtrl">
+
+    <script>
+    function studentController($scope,$http){
+        var url="data.txt";
+        $http.get(url).success(function(response){
+            $scope.students=response;
+        });
+    }
+    
+    </script>
+</body>
+</html>

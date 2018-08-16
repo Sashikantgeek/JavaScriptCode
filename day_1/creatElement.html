@@ -1,0 +1,33 @@
+<html>
+
+<head>
+    <title>Create Element</title>
+    <script>
+        // console.log('window',window);
+        window.onload = function () {
+            // creating INPUT Element and storing its reference in 'inputEl' variable.
+            var inputEl = document.createElement('input');
+
+            // selecting all the tags named by 'main' and storing in var 'mainel'
+            //  document.getElementsByTagName always return a HTMLCollection by default.
+            var mainEL = document.getElementsByTagName('main')[2];
+
+            // Appending the input Element to the selected main tag.
+            mainEL.appendChild(inputEl);
+        }
+    </script>
+</head>
+
+<body>
+    <main id='1'>
+        hi
+    </main>
+    <main id='2'>
+        hi
+    </main>
+    <main id='3'>
+        hello
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,104 @@
+<html>
+
+<head>
+    <title>Object Traverse</title>
+    <script>
+        window.onload = function () {
+            // var obj = {}; object body
+            // var obj = {
+            //     key:'value',
+            //     key:'value'
+            // }
+
+            // ways of creating Object
+            var obj1 = {
+                name: "Ram"
+            };
+            var obj2 = new Object();
+            var obj5 = new Object({
+                mark: 99
+            });
+            var obj3 = Object.assign({},obj1);
+            var obj4 = Object.assign({age: 24},obj1);
+            var obj6 = Object.assign(obj5,obj1);
+
+            var str = 'Sashi';
+
+            // ways to check if one is object
+            console.log('typeof obj1', typeof obj1);
+            console.log('typeof obj2', typeof obj2);
+            console.log('typeof obj3', typeof obj3);
+
+            console.log('typeof str', typeof str);
+
+            var object = {
+                name: "Sashi",
+                age: 26,
+                occupation: "Web Developer",
+                qualification: 'B Tech',
+                personalInfo: {
+                    hobbies: ['cooking', 'playing', 'coding']
+                }
+            }
+
+            // Option 1
+            console.log('Option 1');
+            console.log('========');
+            for (var i = 0; i < object.personalInfo.hobbies.length; i++) {
+                console.log(object.personalInfo.hobbies[i]);
+            }
+            // Option 2
+            console.log('Option 2')
+            console.log('========');
+
+            for (var i in object) {       //in always take index number of array
+                console.log( object[i]);
+            }
+            // Option 3
+            // console.log('Option 3')
+            // console.log('========');
+
+            // for(var i of object){   //of always take value of array
+            //         console.log(`object.personalInfo.hobbies ${i}`,i);
+            //     }
+            // Option 4 
+            console.log('Option 4')
+            console.log('========');
+            console.log(Object.keys(object));
+            // Option 5
+            
+            console.log('Option 5')
+            console.log('========');
+            console.log(Object.values(object));
+            
+            var objHolder = document.createElement('div');
+            var mainEl = document.getElementsByTagName('main')[0];
+
+            objHolder.innerHTML = JSON.stringify(object);
+            mainEl.appendChild(objHolder);
+
+
+
+        }
+    </script>
+    <style>
+        main {
+            text-align: center;
+        }
+
+        span {
+            color: brown;
+            font-size: 22px;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <h1>Object Iteration ways</h1>
+        <h3>press
+            <span>'F12'</span> to open Developer tool.</h3>
+    </main>
+</body>
+
+</html>

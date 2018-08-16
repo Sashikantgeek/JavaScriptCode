@@ -1,0 +1,74 @@
+<html>
+
+<head>
+    <title>Animation</title>
+    <script>
+        window.onload = function () {
+            var countr = 0;
+            var btnEl = document.getElementsByClassName('btn')[0];
+            btnEl.addEventListener('mouseover', function () {
+
+                btnEl.className = 'btn_hover';
+                
+                // btnEl.style.backgroundColor = 'yellow';
+                // btnEl.style.color = 'darkorange';
+                // btnEl.style.borderColor = 'yellowgreen';
+            });
+            btnEl.addEventListener('mouseout', function () {
+
+                btnEl.className = 'btn';
+                
+                // btnEl.style.backgroundColor = 'darkorange';
+                // btnEl.style.color = 'yellow';
+                // btnEl.style.borderColor = 'goldenrod';
+            });
+            console.log('btnEl.style', btnEl.style);
+            // btnEl.style.(function(){
+            //     
+            // })    
+            for (var i in btnEl.style) {
+                countr++;
+            }
+            console.log(countr);
+
+        }
+    </script>
+    <style>
+        * {
+            font-size: 100%;
+        }
+        button{
+            
+            padding: 0.5em 0.8em;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        /* #btn {
+            background-color: darkorange;
+            border: 5px solid goldenrod;
+            color: yellow;
+            
+        } */
+        .btn {
+            background-color: darkorange;
+            border: 5px solid goldenrod;
+            color: yellow;
+            
+        }
+        .btn_hover {
+            background-color: yellow;
+            color: darkorange;
+            border-color: yellowgreen;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <button class='btn'>Click Me</button>
+    </main>
+</body>
+
+</html>

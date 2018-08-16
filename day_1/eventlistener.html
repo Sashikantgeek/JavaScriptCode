@@ -1,0 +1,25 @@
+<html>
+<head>
+    <title>Event Listener</title>
+    <script>
+        window.onload = function(){
+            var btnEl = document.getElementsByTagName('button')[0];
+            btnEl.addEventListener('mouseout', function(event){
+                console.log(event.type);
+            })
+            btnEl.addEventListener('mouseover', function(event){
+                console.log(event.type);
+            })
+            btnEl.addEventListener('mouseenter', function(event){
+                console.log(event.type);
+            })
+            btnEl.addEventListener('click', function(event){
+                console.log(event.type);
+            })
+        }
+    </script>
+</head>
+<body>
+    <button>Click Me</button>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<html>
+
+<head>
+    <title>Demo Iterator</title>
+</head>
+
+<body>
+    <main>
+        <h1>First Step</h1>
+        <h4>==========</h4>
+        <h3>Inserting Item</h3>
+        <div id="First">
+            <input type="text">
+            <button>Add</button>
+        </div>
+        <h1>Second Step</h1>
+        <h4>==========</h4>
+        <h3>Updating Item</h3>
+        <div id="Second">
+
+        </div>
+        <h1>Third Step</h1>
+        <h4>==========</h4>
+        <h3>Display Item</h3>
+        <div id="Third">
+            <ul id="liList"></ul>
+        </div>
+    </main>
+    <script>
+        window.onload = function () {
+            friendList = {
+                friends: ['Somya', 'Rahul', 'siba', 'mukti']
+            }
+            var firstDiv = document.getElementById('Second');
+            var secondDiv = document.getElementById('Third');
+            var thirdDiv = document.getElementsByTagName("input")[0];
+            var btnList = document.getElementsByTagName('button')[0];
+            var liList = document.getElementById('liList');
+            btnList.addEventListener('click', function (event) {
+                if (thirdDiv.value) {
+                    friendList.friends.push(thirdDiv.value);
+                }
+                updateStep();
+            })
+            var updateStep = function () {
+                firstDiv.innerHTML = '<h4>' + JSON.stringify(friendList) + '</h4>';
+                displyItem();
+            };
+            var displyItem = function () {
+                liList.innerHTML = '';
+                friendList.friends.forEach(function (item) {
+                    liList.innerHTML += `<li>${item}</li>`;
+                })
+            }
+            updateStep();
+        };
+
+    </script>
+</body>
+
+</html>

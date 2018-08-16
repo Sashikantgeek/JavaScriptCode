@@ -1,0 +1,84 @@
+<html>
+
+<head>
+    <title>
+        Object Iteration Task
+    </title>
+    <script>
+        window.onload = function () {
+            var dataSet = {
+                fruits: [
+                    "mango", "apple", "banana"
+                ]
+            }
+
+            var objEl = document.getElementById('Object');
+            var ulElement = document.getElementById('ul');
+            var inputEl = document.getElementsByTagName('input')[0];
+            var btnEl = document.getElementsByTagName('button')[0];
+
+            btnEl.addEventListener('click',function(event){
+                if(inputEl.value){
+                    dataSet.fruits.push(inputEl.value);
+                }
+                updateObject();
+            })
+
+
+            var updateObject = function () {
+                // objEl.innerHTML = '<h4>'+dataSet+'</h4>';
+
+                objEl.innerHTML = '<h4>' + JSON.stringify(dataSet) + '</h4>';
+                addToList();
+            };
+            var addToList = function () {
+                ulElement.innerHTML = '';
+                dataSet.fruits.forEach(function (item) {
+                    // var a = 5;
+                    // a = a + 2;
+                    // a += 2;
+                    ulElement.innerHTML += `<li>${item}</li>`;
+                })
+            }
+            updateObject();
+
+
+        }
+    </script>
+    <style>
+            main {
+                text-align: center;
+            }
+    
+            span {
+                color: brown;
+                font-size: 22px;
+            }
+            ul{
+                padding: 0
+            }
+        </style>
+</head>
+
+<body>
+    <main>
+        <h1>Step 1</h1>
+        <h3>Inserting Items</h3>
+        <div id='Input'>
+            <input type="text">
+            <button>Add to List</button>
+        </div>
+        <h1>Step 2</h1>
+        <h3>Managing Object</h3>
+        <div id='Object'>
+
+        </div>
+        <h1>Step 3</h1>
+        <h3>Updateing the List</h3>
+        <div id='List'>
+            <ul id='ul'></ul>
+        </div>
+    </main>
+</body>
+
+</html>

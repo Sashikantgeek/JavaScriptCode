@@ -1,0 +1,80 @@
+<html>
+
+<head>
+    <title>
+
+    </title>
+    <script>
+        window.onload = function () {
+            var divEl = document.getElementById('box_1');
+            var divElement = document.getElementById('box_2');
+            var ulElement = document.getElementById('selection_list');
+
+
+            var newUlEl = document.createElement('ul');
+
+            divElement.appendChild(newUlEl);
+
+            ulElement.addEventListener('click', function (event) {
+                // event.target.style.backgroundColor = 'skyblue';
+                event.target.classList.add('sky');
+                var newLiElement = document.createElement('li');
+                newLiElement.innerHTML = event.target.innerHTML;
+                newUlEl.appendChild(newLiElement);
+                
+                console.log('event',event);
+                // newUlEl.appendChild(event.target);
+
+            })
+        }
+    </script>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        .sky{
+            background-color: skyblue;
+        }
+        main {
+            height: 500px;
+            width: 60vw;
+            margin: 100px auto;
+            padding: 10px;
+        }
+
+        #box_1,
+        #box_2 {
+            display: inline-block;
+            width: 45%;
+            border: 1px solid gray;
+            overflow: auto;
+            height: 100%;
+            padding: 20px;
+            font-size: 24px;
+        }
+
+        #box_2 {
+            margin-left: 9%;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div id='box_1'>
+            <ul id='selection_list'>
+                <li>Apple</li>
+                <li>Banana</li>
+                <li>Mango</li>
+                <li>Grapes</li>
+                <li>Orange</li>
+            </ul>
+        </div>
+        <div id='box_2'>
+
+        </div>
+    </main>
+</body>
+
+</html>
